@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page Properti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <header class="bg-white shadow-md p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold">Rumah Idaman</h1>
+        <nav>
+          <ul class="flex space-x-4">
+            <li><a href="#features" class="text-gray-700">Fitur</a></li>
+            <li><a href="#testimoni" class="text-gray-700">Testimoni</a></li>
+            <li><a href="#contact" class="text-gray-700">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('https://source.unsplash.com/1600x900/?house')">
+      <div class="text-center text-white bg-black bg-opacity-50 p-8 rounded-lg">
+        <h2 class="text-4xl font-bold mb-4">Temukan Rumah Impian Anda</h2>
+        <p class="text-lg mb-4">Dapatkan rumah terbaik dengan harga terbaik.</p>
+        <button class="bg-blue-600 px-6 py-2 rounded-full text-white">Mulai Sekarang</button>
+      </div>
+    </section>
+
+    <section id="features" class="container mx-auto p-8 text-center">
+      <h2 class="text-3xl font-bold mb-6">Kenapa Memilih Kami?</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white shadow-md rounded-lg">
+          <h3 class="text-xl font-semibold">Lokasi Strategis</h3>
+          <p>Rumah tersedia di lokasi terbaik dengan akses mudah.</p>
+        </div>
+        <div class="p-6 bg-white shadow-md rounded-lg">
+          <h3 class="text-xl font-semibold">Harga Terjangkau</h3>
+          <p>Dapatkan rumah dengan harga terbaik sesuai budget Anda.</p>
+        </div>
+        <div class="p-6 bg-white shadow-md rounded-lg">
+          <h3 class="text-xl font-semibold">Fasilitas Lengkap</h3>
+          <p>Rumah modern dengan fasilitas premium untuk kenyamanan Anda.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimoni" class="bg-gray-200 p-8 text-center">
+      <h2 class="text-3xl font-bold mb-6">Apa Kata Mereka?</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 bg-white shadow-md rounded-lg">
+          <p>"Rumahnya nyaman dan proses pembelian sangat mudah!"</p>
+          <p class="mt-2 font-semibold">- Budi, Jakarta</p>
+        </div>
+        <div class="p-6 bg-white shadow-md rounded-lg">
+          <p>"Pelayanan yang ramah dan properti berkualitas tinggi."</p>
+          <p class="mt-2 font-semibold">- Siti, Bandung</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container mx-auto p-8 text-center">
+      <h2 class="text-3xl font-bold mb-6">Hubungi Kami</h2>
+      <form class="bg-white p-6 shadow-md rounded-lg max-w-lg mx-auto">
+        <input type="text" placeholder="Nama" class="w-full p-2 border rounded mb-4" />
+        <input type="email" placeholder="Email" class="w-full p-2 border rounded mb-4" />
+        <textarea placeholder="Pesan" class="w-full p-2 border rounded mb-4"></textarea>
+        <button type="submit" class="bg-blue-600 px-6 py-2 rounded-full text-white">Kirim</button>
+      </form>
+    </section>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+      <p>&copy; 2025 Rumah Idaman. Semua Hak Dilindungi.</p>
+    </footer>
+  </body>
+</html>

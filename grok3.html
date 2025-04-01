@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Properti Impian - Temukan Rumah Idaman Anda</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-gray-800">Properti Impian</h1>
+        <div class="space-x-4">
+          <a href="#home" class="text-gray-600 hover:text-blue-500">Beranda</a>
+          <a href="#properties" class="text-gray-600 hover:text-blue-500">Properti</a>
+          <a href="#contact" class="text-gray-600 hover:text-blue-500">Kontak</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Temukan Rumah Impian Anda</h2>
+        <p class="text-xl mb-8">Pilihan properti terbaik dengan harga kompetitif</p>
+        <button class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition">Lihat Properti</button>
+      </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties" class="py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h3 class="text-3xl font-bold text-center mb-12">Daftar Properti</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="property-list">
+          <!-- Property cards will be added by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-200">
+      <div class="max-w-7xl mx-auto px-4">
+        <h3 class="text-3xl font-bold text-center mb-12">Hubungi Kami</h3>
+        <form class="max-w-lg mx-auto space-y-4">
+          <input type="text" placeholder="Nama" class="w-full p-3 rounded-lg" />
+          <input type="email" placeholder="Email" class="w-full p-3 rounded-lg" />
+          <textarea placeholder="Pesan" class="w-full p-3 rounded-lg h-32"></textarea>
+          <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg w-full hover:bg-blue-700">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <p>&copy; 2025 Properti Impian. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Data properti
+      const properties = [
+        {
+          title: "Rumah Minimalis Modern",
+          price: "Rp 850.000.000",
+          location: "Jakarta Selatan",
+          image: "https://via.placeholder.com/300x200?text=Rumah+1",
+        },
+        {
+          title: "Villa Mewah",
+          price: "Rp 2.500.000.000",
+          location: "Bandung",
+          image: "https://via.placeholder.com/300x200?text=Rumah+2",
+        },
+        {
+          title: "Rumah Keluarga",
+          price: "Rp 1.200.000.000",
+          location: "Surabaya",
+          image: "https://via.placeholder.com/300x200?text=Rumah+3",
+        },
+      ];
+
+      // Fungsi untuk menampilkan properti
+      function displayProperties() {
+        const propertyList = document.getElementById("property-list");
+        properties.forEach((property) => {
+          const card = `
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="${property.image}" alt="${property.title}" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h4 class="text-xl font-semibold">${property.title}</h4>
+                            <p class="text-gray-600">${property.location}</p>
+                            <p class="text-blue-600 font-bold mt-2">${property.price}</p>
+                            <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                `;
+          propertyList.innerHTML += card;
+        });
+      }
+
+      // Panggil fungsi saat halaman dimuat
+      window.onload = displayProperties;
+
+      // Smooth scroll untuk navigasi
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

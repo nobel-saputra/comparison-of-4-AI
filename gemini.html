@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda Properti Impian Anda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <header class="bg-indigo-500 text-white py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <h1 class="text-2xl font-semibold">Beranda Properti</h1>
+        <nav class="hidden md:block">
+          <ul class="flex space-x-6">
+            <li><a href="#featured" class="hover:text-indigo-200 transition duration-300">Properti Unggulan</a></li>
+            <li><a href="#services" class="hover:text-indigo-200 transition duration-300">Layanan Kami</a></li>
+            <li><a href="#contact" class="hover:text-indigo-200 transition duration-300">Hubungi Kami</a></li>
+          </ul>
+        </nav>
+        <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+      <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
+        <div class="flex justify-end mb-4">
+          <button id="close-menu-btn" class="text-white focus:outline-none" aria-label="Close Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+        <nav class="block">
+          <ul class="space-y-4">
+            <li><a href="#featured" class="block text-lg text-white hover:text-indigo-200 transition duration-300">Properti Unggulan</a></li>
+            <li><a href="#services" class="block text-lg text-white hover:text-indigo-200 transition duration-300">Layanan Kami</a></li>
+            <li><a href="#contact" class="block text-lg text-white hover:text-indigo-200 transition duration-300">Hubungi Kami</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <section class="bg-indigo-100 py-20 px-4 text-center">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-semibold text-indigo-700 mb-4">Temukan Rumah Impian Anda</h2>
+        <p class="text-lg text-gray-600 mb-8">Kami memiliki berbagai pilihan properti untuk memenuhi kebutuhan Anda.</p>
+        <a href="#featured" class="bg-indigo-500 text-white py-3 px-6 rounded-full hover:bg-indigo-600 transition duration-300 text-lg">Lihat Properti Unggulan</a>
+      </div>
+    </section>
+
+    <section id="featured" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-semibold text-gray-800 text-center mb-8">Properti Unggulan</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="https://source.unsplash.com/featured/?house,interior1" alt="Rumah Modern 1" class="w-full h-64 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Rumah Modern di Pusat Kota</h3>
+              <p class="text-gray-600 mb-4">3 Kamar Tidur, 2 Kamar Mandi, 200 m²</p>
+              <p class="text-indigo-500 font-bold text-2xl">Rp 8.000.000.000</p>
+              <a href="#" class="mt-4 block bg-indigo-500 text-white py-2 px-4 rounded-full text-center hover:bg-indigo-600 transition duration-300">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="https://source.unsplash.com/featured/?house,interior2" alt="Rumah Keluarga Nyaman" class="w-full h-64 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Rumah Keluarga Nyaman</h3>
+              <p class="text-gray-600 mb-4">4 Kamar Tidur, 3 Kamar Mandi, 250 m²</p>
+              <p class="text-indigo-500 font-bold text-2xl">Rp 10.000.000.000</p>
+              <a href="#" class="mt-4 block bg-indigo-500 text-white py-2 px-4 rounded-full text-center hover:bg-indigo-600 transition duration-300">Lihat Detail</a>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="https://source.unsplash.com/featured/?house,interior3" alt="Apartemen Mewah" class="w-full h-64 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Apartemen Mewah di Pantai</h3>
+              <p class="text-gray-600 mb-4">2 Kamar Tidur, 2 Kamar Mandi, 150 m²</p>
+              <p class="text-indigo-500 font-bold text-2xl">Rp 12.000.000.000</p>
+              <a href="#" class="mt-4 block bg-indigo-500 text-white py-2 px-4 rounded-full text-center hover:bg-indigo-600 transition duration-300">Lihat Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-indigo-100 py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Layanan Kami</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Jual Beli Properti</h3>
+            <p class="text-gray-600 mb-4">Kami membantu Anda menemukan pembeli atau penjual yang tepat untuk properti Anda.</p>
+            <a href="#" class="mt-4 text-indigo-500 hover:text-indigo-700 transition duration-300 font-semibold">Pelajari Lebih Lanjut</a>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Sewa Properti</h3>
+            <p class="text-gray-600 mb-4">Temukan properti sewaan yang sesuai dengan anggaran dan kebutuhan Anda.</p>
+            <a href="#" class="mt-4 text-indigo-500 hover:text-indigo-700 transition duration-300 font-semibold">Pelajari Lebih Lanjut</a>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Konsultasi Properti</h3>
+            <p class="text-gray-600 mb-4">Dapatkan saran ahli dari tim kami untuk keputusan properti yang tepat.</p>
+            <a href="#" class="mt-4 text-indigo-500 hover:text-indigo-700 transition duration-300 font-semibold">Pelajari Lebih Lanjut</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-semibold text-gray-800 text-center mb-8">Hubungi Kami</h2>
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <form id="contact-form" class="space-y-6">
+            <div>
+              <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama Anda</label>
+              <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Nama Anda" required />
+            </div>
+            <div>
+              <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Anda</label>
+              <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email Anda" required />
+            </div>
+            <div>
+              <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Pesan Anda</label>
+              <textarea id="message" name="message" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-y" placeholder="Pesan Anda" required></textarea>
+            </div>
+            <button type="submit" class="bg-indigo-500 text-white py-3 px-6 rounded-full hover:bg-indigo-600 transition duration-300 text-lg w-full">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto px-4 text-center">
+        <p>© 2023 Beranda Properti. Hak Cipta Dilindungi.</p>
+      </div>
+    </footer>
+
+    <script>
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenuBtn = document.getElementById("close-menu-btn");
+      const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+      const navLinks = document.querySelectorAll(".nav-links a");
+      const sections = document.querySelectorAll("section");
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("hidden");
+      }
+
+      hamburgerBtn.addEventListener("click", toggleMobileMenu);
+      closeMenuBtn.addEventListener("click", toggleMobileMenu);
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", toggleMobileMenu);
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!mobileMenu.classList.contains("hidden") && !mobileMenu.contains(event.target) && event.target !== hamburgerBtn) {
+          toggleMobileMenu();
+        }
+      });
+
+      function updateActiveNavLink() {
+        let currentSectionId = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+            currentSectionId = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").slice(1) === currentSectionId) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveNavLink);
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      const contactForm = document.getElementById("contact-form");
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+
+          if (name && email && message) {
+            alert(`Terima kasih, ${name}! Pesan Anda telah terkirim.`);
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+          } else {
+            alert("Mohon lengkapi semua kolom formulir.");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RumahImpian - Temukan Rumah Impian Anda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1600/900');
+            background-size: cover;
+            background-position: center;
+        }
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-blue-600">RumahImpian</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-gray-800 hover:text-blue-600 transition">Beranda</a>
+                    <a href="#properti" class="text-gray-800 hover:text-blue-600 transition">Properti</a>
+                    <a href="#keunggulan" class="text-gray-800 hover:text-blue-600 transition">Keunggulan</a>
+                    <a href="#testimoni" class="text-gray-800 hover:text-blue-600 transition">Testimoni</a>
+                    <a href="#kontak" class="text-gray-800 hover:text-blue-600 transition">Kontak</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="#beranda" class="block py-2 text-gray-800 hover:text-blue-600 transition">Beranda</a>
+                <a href="#properti" class="block py-2 text-gray-800 hover:text-blue-600 transition">Properti</a>
+                <a href="#keunggulan" class="block py-2 text-gray-800 hover:text-blue-600 transition">Keunggulan</a>
+                <a href="#testimoni" class="block py-2 text-gray-800 hover:text-blue-600 transition">Testimoni</a>
+                <a href="#kontak" class="block py-2 text-gray-800 hover:text-blue-600 transition">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero h-screen flex items-center">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Temukan Rumah Impian Anda</h1>
+            <p class="text-xl md:text-2xl text-white mb-8">Properti hunian berkualitas dengan lokasi strategis dan harga terjangkau</p>
+            <div class="bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto">
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flex-1">
+                        <select id="propertyType" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Tipe Properti</option>
+                            <option value="house">Rumah</option>
+                            <option value="apartment">Apartemen</option>
+                            <option value="villa">Villa</option>
+                            <option value="land">Tanah</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <select id="location" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Lokasi</option>
+                            <option value="jakarta">Jakarta</option>
+                            <option value="bandung">Bandung</option>
+                            <option value="surabaya">Surabaya</option>
+                            <option value="bali">Bali</option>
+                        </select>
+                    </div>
+                    <div class="flex-1">
+                        <select id="price" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Rentang Harga</option>
+                            <option value="low">< Rp500 juta</option>
+                            <option value="medium">Rp500 juta - Rp1 M</option>
+                            <option value="high">Rp1 M - Rp2 M</option>
+                            <option value="luxury">> Rp2 M</option>
+                        </select>
+                    </div>
+                    <button id="searchBtn" class="bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition">Cari Properti</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties Section -->
+    <section id="properti" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Properti Unggulan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property Card 1 -->
+                <div class="property-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="/api/placeholder/600/400" alt="Rumah Modern Jakarta" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white px-2 py-1 rounded-md">Dijual</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Rumah Modern Jakarta Selatan</h3>
+                        <p class="text-gray-600 mb-4">Jl. Kemang Raya No. 10, Jakarta Selatan</p>
+                        <div class="flex justify-between mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-bed text-blue-600 mr-2"></i>
+                                <span>4 Kamar</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-bath text-blue-600 mr-2"></i>
+                                <span>3 Kamar Mandi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-ruler-combined text-blue-600 mr-2"></i>
+                                <span>200 m²</span>
+                            </div>
+                        </div>
+                        <div class="border-t pt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">Rp1.8 M</span>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="property-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="/api/placeholder/600/400" alt="Apartemen Mewah" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white px-2 py-1 rounded-md">Disewa</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Apartemen Mewah CBD</h3>
+                        <p class="text-gray-600 mb-4">Jl. Sudirman Kav. 52-53, Jakarta Pusat</p>
+                        <div class="flex justify-between mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-bed text-blue-600 mr-2"></i>
+                                <span>2 Kamar</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-bath text-blue-600 mr-2"></i>
+                                <span>2 Kamar Mandi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-ruler-combined text-blue-600 mr-2"></i>
+                                <span>80 m²</span>
+                            </div>
+                        </div>
+                        <div class="border-t pt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">Rp15 jt/bulan</span>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="property-card bg-white rounded-lg overflow-hidden shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="/api/placeholder/600/400" alt="Villa Bali" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white px-2 py-1 rounded-md">Dijual</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Villa Mewah Bali</h3>
+                        <p class="text-gray-600 mb-4">Jl. Raya Ubud No. 88, Bali</p>
+                        <div class="flex justify-between mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-bed text-blue-600 mr-2"></i>
+                                <span>5 Kamar</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-bath text-blue-600 mr-2"></i>
+                                <span>4 Kamar Mandi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-ruler-combined text-blue-600 mr-2"></i>
+                                <span>500 m²</span>
+                            </div>
+                        </div>
+                        <div class="border-t pt-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">Rp4.5 M</span>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-white border border-blue-600 text-blue-600 px-6 py-3 rounded-md hover:bg-blue-600 hover:text-white transition">Lihat Semua Properti</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="keunggulan" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Mengapa Memilih RumahImpian</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check-circle text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Terpercaya</h3>
+                    <p class="text-gray-600">Kami telah membantu ribuan keluarga menemukan rumah impian mereka selama lebih dari 10 tahun.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-medal text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Kualitas Terbaik</h3>
+                    <p class="text-gray-600">Seluruh properti kami melewati proses seleksi ketat untuk memastikan kualitas terbaik.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-map-marker-alt text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Lokasi Strategis</h3>
+                    <p class="text-gray-600">Properti kami terletak di lokasi strategis dengan akses mudah ke berbagai fasilitas penting.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-hand-holding-usd text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Harga Terjangkau</h3>
+                    <p class="text-gray-600">Kami menawarkan berbagai pilihan properti dengan harga yang sesuai dengan budget Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Siap Menemukan Rumah Impian Anda?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Konsultasikan kebutuhan properti Anda dengan tim ahli kami dan dapatkan penawaran terbaik.</p>
+            <button id="konsultasiBtn" class="bg-white text-blue-600 px-8 py-3 rounded-md font-bold text-lg hover:bg-gray-100 transition">Konsultasi Gratis</button>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Testimoni Klien Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="/api/placeholder/100/100" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-bold">Budi Santoso</h3>
+                            <p class="text-gray-600">Jakarta</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700">"Proses pembelian rumah menjadi sangat mudah berkat bantuan dari tim RumahImpian. Mereka memberikan informasi yang lengkap dan transparan."</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="/api/placeholder/100/100" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-bold">Siti Nurhaliza</h3>
+                            <p class="text-gray-600">Bandung</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700">"Saya sangat puas dengan pelayanan RumahImpian. Mereka membantu saya menemukan apartemen yang sesuai dengan kebutuhan dan budget saya."</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="/api/placeholder/100/100" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-bold">Agus Wijaya</h3>
+                            <p class="text-gray-600">Surabaya</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700">"Tim RumahImpian sangat profesional dan responsif. Mereka membantu saya mendapatkan rumah idaman dengan harga yang kompetitif."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Hubungi Kami</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Kirim Pesan</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium">Nama Lengkap</label>
+                                <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">Email</label>
+                                <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 font-medium">Nomor Telepon</label>
+                            <input type="tel" id="phone" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Pesan</label>
+                            <textarea id="message" rows="5" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">Kirim Pesan</button>
+                    </form>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Informasi Kontak</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Alamat</h4>
+                                <p class="text-gray-600">Jl. Gatot Subroto No. 123, Jakarta Selatan, 12930</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Telepon</h4>
+                                <p class="text-gray-600">+62 21 1234 5678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email</h4>
+                                <p class="text-gray-600">info@rumahimpian.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Jam Operasional</h4>
+                                <p class="text-gray-600">Senin - Jumat: 09:00 - 17:00<br>Sabtu: 09:00 - 15:00<br>Minggu: Tutup</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-bold text-lg mb-4">Ikuti Kami</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-200 transition">
+                                <i class="fab fa-facebook-f text-blue-600"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-200 transition">
+                                <i class="fab fa-instagram text-blue-600"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-200 transition">
+                                <i class="fab fa-twitter text-blue-600"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-200 transition">
+                                <i class="fab fa-youtube text-blue-600"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">RumahImpian</h3>
+                    <p class="mb-4">Solusi terbaik untuk menemukan properti hunian yang sesuai dengan kebutuhan dan impian Anda.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#beranda" class="hover:text-blue-400 transition">Beranda</a></li>
+                        <li><a href="#properti" class="hover:text-blue-400 transition">Properti</a></li>
+                        <li><a href="#keunggulan" class="hover:text-blue-400 transition">Keunggulan</a></li>
+                        <li><a href="#testimoni" class="hover:text-blue-400 transition">Testimoni</a></li>
+                        <li><a href="#kontak" class="hover:text-blue-400 transition">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400 transition">Jual Properti</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Beli Properti</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Sewa Properti</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Konsultasi KPR</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Investasi Properti</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="mb-4">Dapatkan informasi terbaru tentang properti dan penawaran khusus.</p>
+                    <form id="newsletterForm" class="flex">
+                        <input type="email" placeholder="Email Anda" class="p-2 rounded-l-md w-full focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-blue-600 py-2 px-4 rounded-r-md hover:bg-blue-700 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2025 RumahImpian. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
