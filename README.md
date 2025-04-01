@@ -22,7 +22,7 @@ This experiment involved several leading AI models:
 * **ChatGPT:** OpenAI's large language model, known for its ability to generate human-like text and code.
 * **Claude AI:** Anthropic's AI model, focused on safety and helpfulness, designed for helpful and harmless conversations.
 * **Blackbox AI:** An AI code editor that helps developers in creating program code.
-* * **Deepseek:** Opensource Ai from China.
+* **Deepseek:** Opensource Ai from China.
 
 ## Process
 
