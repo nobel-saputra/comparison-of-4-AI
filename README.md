@@ -26,7 +26,7 @@ This experiment involved several leading AI models:
 ## Process
 
 1.  The same prompt was given to each AI model.
-2.  The resulting HTML, CSS, and JavaScript code was evaluated.
+2.  The resulting Tailwindcss & Javascript code was evaluated.
 3.  The results were compared to observe differences in interpretation and code quality.
 
 ## Results
