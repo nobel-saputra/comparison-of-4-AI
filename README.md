@@ -7,9 +7,11 @@ This project is an experiment that tests the ability of various AI models to gen
 This experiment began with a question: can a decent website be created from just a very simple prompt? I used a common Indonesian prompt and observed how different AI models responded. The results were quite surprising! A functional landing page was successfully generated, demonstrating the potential of AI in web development.
 
 The prompt used was:
+
 Buatkan aku website landing page menggunakan tailwindcss dan javascript mengenai properti rumah
 
 Which translates to:
+
 Create me a landing page website using Tailwind CSS and JavaScript about house properties.
 ## AI Technologies Used
 
