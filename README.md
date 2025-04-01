@@ -22,7 +22,7 @@ This experiment involved several leading AI models:
 * **ChatGPT:** OpenAI's large language model, known for its ability to generate human-like text and code.
 * **Claude AI:** Anthropic's AI model, focused on safety and helpfulness, designed for helpful and harmless conversations.
 * **Blackbox AI:** An AI code editor that helps developers in creating program code.
-* **Deepseek:** Opensource Ai from China.
+* **Deepseek:** Opensource Ai from China and help developers to make a code.
 
 ## Process
 
@@ -37,3 +37,6 @@ Despite the simplicity of the prompt, most AI models were able to generate code 
 ## Conclusion
 
 This experiment provides interesting insights into the ability of AI to understand natural language and generate code. While more specific prompts will yield better results, the ability of AI models to produce useful output from basic instructions is impressive. This opens up new possibilities for more accessible and efficient web development.
+
+
+# **[Here's the link](https://comparison-of-6-ai.vercel.app/)**
